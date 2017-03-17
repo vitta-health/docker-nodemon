@@ -2,4 +2,6 @@ FROM node:alpine
 
 RUN npm install -g nodemon
 
-CMD ["nodemon -L", "server.js"]
+ENV APP server.js
+
+CMD ["nodemon -L", "$APP"]
