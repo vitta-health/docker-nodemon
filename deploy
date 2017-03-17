@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+for dir in *; do
+    if [ -d "${dir}" ]; then
+        docker build --rm -t vitta/nodemon:"${dir}" ./"${dir}"/
+        docker push vitta/nodemon:"${dir}"
+    fi
+done
