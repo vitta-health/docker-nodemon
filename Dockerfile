@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:wheezy
 
 RUN npm install -g nodemon
 
