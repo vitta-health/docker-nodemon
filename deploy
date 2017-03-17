@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-
-for dir in *; do
-    if [ -d "${dir}" ]; then
-        docker build --rm -t vitta/nodemon:"${dir}" ./"${dir}"/
-        docker push vitta/nodemon:"${dir}"
-    fi
-done
+VERSION=$(git rev-parse --abbrev-ref HEAD)
+docker build --rm -t vitta/nodemon:$VERSION .
+docker push vitta/nodemon:$VERSION
